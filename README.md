@@ -85,7 +85,9 @@ flowchart TD
 ## 5. 인게임플레이 상세
 
 ### 5.1 오브젝트 수집과 성장
+
 + 실행환경 이미지
+
 `TrashController.OnTriggerStay`는 `Obstacle` 태그를 가진 콜라이더에서 `IObstacle`을 얻는다. `CheckLevel(playerLevel)`이 `true`이면 오브젝트 레벨이 더 높다는 의미로 수집을 건너뛴다. 수집 가능한 경우 목표 진행도, 경험치·골드, 흡수 연출, 적재량을 처리한다.
 
 `ObstacleBase`의 주요 규칙은 다음과 같다.
@@ -100,7 +102,9 @@ flowchart TD
 `GamePlayerStateController`는 레벨 1·경험치 0에서 시작한다. 수집할 때 골드와 경험치를 더하고 설정값을 넘으면 한 번 레벨업한다. 레벨업마다 목표 크기가 각 축 0.5씩 커지고 카메라 높이는 4씩 증가한다. 크기는 `SmoothDamp`로 보간한다. `PlayerExpData.maxExp`는 20개이며 첫 설정값은 30, 마지막은 19,964다.
 
 ### 5.2 적재량과 이동속도
+
 + 실행환경 이미지
+
 ```text
 기본 이동속도 = PlayerState.moveSpeed × UpgradeData.moveSpeed[이동 업그레이드 단계]
 최대 적재량   = UpgradeData.maxTrash[적재량 업그레이드 단계]
@@ -127,18 +131,23 @@ flowchart TD
 | Target | `GetName()`이 목표 이름과 일치하는 오브젝트의 남은 수량이 0 |
 
 + 실행환경 이미지
+
 목표 달성 시 `Time.timeScale = 0`, 다음 스테이지 저장(마지막이면 유지), 획득 골드 합산, 승리 패널 표시를 수행한다. 메인 씬으로 자동 이동하지 않는다.
 
 + 실행환경 이미지
+
 시간은 매 프레임 감소하며 0 미만이 되면 멈추고 실패 패널을 표시하고 획득 골드를 합산한다.
 
 + 실행환경 이미지
+
 배터리 UI는 초 대신 남은 시간의 백분율을 표시한다.
 
 + 실행환경 이미지
+
 발 충돌 시 첫 번째는 이어하기 패널을 표시한다. 100골드 이상 보유하고 있다면 골드를 차감하고 재개할 수 있으며, `PlayerCharacter`가 한 번의 기회를 소진한다.
 
 + 실행환경 이미지
+
 이후 발 충돌은 바로 실패 처리한다.
 
 메인 복귀는 `Time.timeScale`을 1로 되돌리고 1초 대기한 뒤 수행한다.
@@ -161,7 +170,9 @@ flowchart TD
 `MainPanelManager`는 Inspector 배열 인덱스 0=상점, 1=홈, 2=스킨, 3=업그레이드로 패널과 선택 이미지를 전환한다. 초기 화면은 홈이다.
 
 ### 6.1 업그레이드
+
 + 실행환경 이미지
+
 `UpgradeBase`의 하위 클래스는 이동속도·시간·적재량 업그레이드를 구분한다. 비용은 이동·적재량이 `upgradeMoney[level + 1]`, 시간이 `upgradeMoney_LimitTime[level + 1]`이다. 구매 시 골드를 차감하고 영구 단계와 관련 UI를 갱신한다. `OnGoldChanged`를 구독해 버튼 이미지를 변경하고 `OnDestroy`에서 구독을 해제한다.
 
 ### 6.2 상점
@@ -172,10 +183,13 @@ flowchart TD
 | 속도 증가 | 100골드 | 기본 이동속도 1.5배, 5초 | 5초 쿨타임 |
 
 + 실행환경 이미지
+
 소모품은 `UI_BuyItem`에서 구매하고 각 `Item_*` 컴포넌트에서 보유 수량을 확인·차감·저장한다. 효과 시간과 쿨타임은 `WaitForSeconds`·`Time.deltaTime`에 의존하므로 일시정지 중 함께 멈춘다.
 
 ### 6.3 스킨
+
 + 실행환경 이미지
+
 `MainSkin`은 Basic, Devil, Diver, Donut, Duck, Future, Heart, Space, Tiger의 9가지 선택 함수를 제공한다. `SetSkin`은 저장된 인덱스로 `SkinData`의 Mesh와 Material을 적용한다.
 
 ## 7. 저장과 설정
