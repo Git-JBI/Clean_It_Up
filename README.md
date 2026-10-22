@@ -8,7 +8,10 @@
 
 핵심 반복 구조는 다음과 같다.
 
-![실행환경 이미지](images/Main.jpg)
+<p align="center">
+  <img src="images/Shop.jpg" alt="Shop" width="24%"> <img src="images/Main.jpg" alt="Main" width="24%"> <img src="images/Skin.jpg" alt="Skin" width="24%"> <img src="images/Upgrade.jpg" alt="Upgrade" width="24%">
+</p>
+
 1. 메인 화면에서 스킨·아이템·업그레이드를 설정한다.
 ![실행환경 이미지](images/Main.jpg)
 2. 현재 스테이지의 테마와 목표로 게임을 시작한다.
