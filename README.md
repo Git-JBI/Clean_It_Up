@@ -10,17 +10,21 @@
 
 <p align="center">
   <img src="images/Shop.jpg" alt="Shop" width="24%"> <img src="images/Main.jpg" alt="Main" width="24%"> <img src="images/Skin.jpg" alt="Skin" width="24%"> <img src="images/Upgrade.jpg" alt="Upgrade" width="24%">
+  <br>
+  1. 메인 화면에서 스킨·아이템·업그레이드를 설정한다.
 </p>
 
-1. 메인 화면에서 스킨·아이템·업그레이드를 설정한다.
-![실행환경 이미지](images/Main.jpg)
-2. 현재 스테이지의 테마와 목표로 게임을 시작한다.
-![실행환경 이미지](images/IngameFoot.jpg)
-3. 현재 레벨 이하의 오브젝트를 수집해 경험치·골드를 얻는다.
-![실행환경 이미지](images/IngameTrashCan.jpg)
-4. 쓰레기 적재량에 따른 감속을 관리하고 발 공격을 피한다.
-![실행환경 이미지](images/Victory.jpg)
-5. 목표 달성 또는 실패 시 획득 골드를 정산하고 메인 화면으로 돌아간다.
+<p align="center">
+  <img src="images/IngameFoot.jpg" alt="발 공격 회피" width="32%"> <img src="images/IngameTrashCan.jpg" alt="쓰레기 적재량 관리" width="32%"> <img src="images/IngameFull.jpg" alt="쓰레기 적재량 가득 참" width="32%">
+  <br>
+  2. 현재 레벨 이하의 오브젝트를 수집해 경험치·골드를 얻으며, 쓰레기 적재량에 따른 감속을 관리하고 발 공격을 피한다.
+</p>
+
+<p align="center">
+  <img src="images/Victory.jpg" alt="Victory" width="32%"> <img src="images/Gameover01.jpg" alt="Gameover01" width="32%"> <img src="images/Gameover02.jpg" alt="Gameover02" width="32%">
+  <br>
+  3. 목표 달성 또는 실패 시 획득 골드를 정산하고 메인 화면으로 돌아간다.
+</p>
 
 상점·이어하기는 게임 내 골드를 사용하며, 진행 정보는 로컬 `PlayerPrefs`에 저장한다. 
 
