@@ -5,8 +5,11 @@
 **Clean it Up!**은 청소기 캐릭터를 조이스틱으로 이동시켜 주변 오브젝트를 수집하는 3D 캐주얼 게임입니다.
 한 스테이지 안에서 경험치와 골드를 얻고 성장하며, 제한시간 안에 누적 경험치 또는 특정 오브젝트 수집 목표를 달성합니다. 스테이지 종료 후 골드를 상점과 영구 업그레이드에 사용합니다.
 
-개발 기간은 2025년 4월~5월, 총 2개월입니다.
-기획, 디자인, 프로그래밍, UI/UX 디자인 총 4명이 1개의 팀을 이루어 프로그래밍 부분을 담당했습니다.
+| 항목 | 내용 |
+| --- | --- |
+| 개발 기간 | 2025년 4월~5월 (총 2개월) |
+| 팀 구성 | 총 4명 (기획, 디자인, 프로그래밍, UI/UX 디자인) |
+| 담당 역할 | 프로그래밍 |
 
 > **프로젝트 파일 링크** : [https://gitlab.com/teamproject2381913/project4/-/tree/develop?ref_type=heads](https://gitlab.com/teamproject2381913/project4/-/tree/develop?ref_type=heads)
 >
@@ -16,21 +19,21 @@
 
 <div align="center">
   <img src="images/Shop.jpg" alt="Shop" width="24%"> <img src="images/Main.jpg" alt="Main" width="24%"> <img src="images/Skin.jpg" alt="Skin" width="24%"> <img src="images/Upgrade.jpg" alt="Upgrade" width="24%">
-  <h2><strong>1. 메인 화면에서 스킨·아이템·업그레이드를 설정합니다.</strong></h2>
+  <h4><strong>1. 메인 화면에서 스킨·아이템·업그레이드를 설정합니다.</strong></h4>
 </div>
 
 ---
 
 <div align="center">
   <img src="images/IngameFoot.jpg" alt="발 공격 회피" width="32%"> <img src="images/IngameTrashCan.jpg" alt="쓰레기 적재량 관리" width="32%"> <img src="images/IngameFull.jpg" alt="쓰레기 적재량 가득 참" width="32%">
-  <h2><strong>2. 현재 레벨 이하의 오브젝트를 수집해 경험치·골드를 얻으며, 쓰레기 적재량에 따른 감속을 관리하고 발 공격을 피합니다.</strong></h2>
+  <h4><strong>2. 현재 레벨 이하의 오브젝트를 수집해 경험치·골드를 얻으며, 쓰레기 적재량에 따른 감속을 관리하고 발 공격을 피합니다.</strong></h4>
 </div>
 
 ---
 
 <div align="center">
   <img src="images/Victory.jpg" alt="Victory" width="32%"> <img src="images/Gameover01.jpg" alt="Gameover01" width="32%"> <img src="images/Gameover02.jpg" alt="Gameover02" width="32%">
-  <h2><strong>3. 목표 달성 또는 실패 시 획득 골드를 정산하고 메인 화면으로 돌아갑니다.</strong></h2>
+  <h4><strong>3. 목표 달성 또는 실패 시 획득 골드를 정산하고 메인 화면으로 돌아갑니다.</strong></h4>
 </div>
 
 ---
@@ -93,6 +96,10 @@ flowchart TD
 
 조이스틱 입력을 이벤트로 전달해 캐릭터를 이동시킵니다. 수집 중에는 적재량에 따라 감속하고, 쓰레기통을 이용하면 적재량을 비우며 일시적으로 가속합니다.
 
+<table>
+<tr>
+<td width="65%" valign="middle">
+
 ```mermaid
 flowchart TD
     A["JoystickBoundary · 포인터 입력"] --> B["Joystick · 방향 정규화"]
@@ -102,6 +109,13 @@ flowchart TD
     E --> F["Rigidbody · 이동 적용"]
     G["TrashController · 적재량 변화"] -->|PlayerCharacter에서 이벤트 연결| E
 ```
+
+</td>
+<td width="35%" align="center" valign="middle">
+  <img src="images/IngameFoot.jpg" alt="조이스틱 이동 및 발 공격 회피 플레이 화면" width="280">
+</td>
+</tr>
+</table>
 
 | 적재 상태 | 기본 속도 대비 이동속도 |
 | --- | --- |
@@ -167,6 +181,10 @@ flowchart TD
 
 스테이지 테마에 맞는 맵과 오브젝트를 활성화하고, 플레이어 주변에 수집 대상과 발 공격을 생성합니다. 카메라는 플레이어를 추적하며 시야를 가리는 벽의 투명도를 조정합니다.
 
+<div align="center">
+  <img src="images/IngameTrashCan.jpg" alt="쓰레기통이 배치된 플레이 화면" width="32%">
+</div>
+
 | 기능 | 주요 동작 | 담당 구성요소 |
 | --- | --- | --- |
 | 테마 선택 | Home·Office·Park에 맞는 테마 활성화 | `SelectThema` |
@@ -194,6 +212,10 @@ flowchart TD
     E --> G[JSON 직렬화]
     G --> H[PlayerPrefs에 저장]
 ```
+
+<div align="center">
+  <img src="images/Shop.jpg" alt="상점 화면" width="32%"> <img src="images/Skin.jpg" alt="스킨 선택 화면" width="32%"> <img src="images/Upgrade.jpg" alt="업그레이드 화면" width="32%">
+</div>
 
 | 기능 | 효과 및 처리 |
 | --- | --- |
