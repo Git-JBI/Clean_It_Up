@@ -9,6 +9,8 @@
 기획, 디자인, 프로그래밍, UI/UX 디자인 총 4명이 1개의 팀을 이루어 프로그래밍 부분을 담당했다.
 
 > **프로젝트 파일 링크** : [https://gitlab.com/teamproject2381913/project4/-/tree/develop?ref_type=heads](https://gitlab.com/teamproject2381913/project4/-/tree/develop?ref_type=heads)
+>
+> **영상 링크** : [https://www.youtube.com/watch?v=u5ylIlOX4Bc](https://www.youtube.com/watch?v=u5ylIlOX4Bc)
 
 핵심 반복 구조는 다음과 같다.
 
